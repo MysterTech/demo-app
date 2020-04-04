@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 
 class App extends Component {
   constructor(props){
@@ -30,12 +31,12 @@ getUsers(){
       {!this.state.loading 
       ? this.state.users.map(user => (
         <div>
-           <h3>{user.name.first + " " + user.name.last}</h3>
-            <p>{user.email}</p>
-            <hr />
+          <h3>{user.name.first + " " + user.name.last}</h3>
+          <p>{user.email}</p>
+          <hr />
         </div>
       ))
-      : 'Loading'}
+      : (<Loading message = "Hey hey hey"/>)}
       </div>
     );
   }
